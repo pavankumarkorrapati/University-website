@@ -1,0 +1,130 @@
+<!DOCTYPE>
+<html>
+<title>DAYANANDA SAGAR UNIVERSITY</title>
+<head>
+<style>
+.top-left {
+  position: absolute;
+  top: 8px;
+  left: 80px;
+ color: white;
+ font-size: 200%; 
+}
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+p{ 
+color: black;
+font-size:20px;
+font-family:lucida;
+border:100px solid white;
+padding:20px;
+background-color:white;
+}
+a:link{
+  padding:14px;
+  background-color:green;
+  text-decoration: none;
+}
+a:hover{
+background-color:cyan;
+text-decoration:underline;
+}
+a:active{
+	color:green;
+}
+#div1 {transition-timing-function: linear;}
+body{
+ background-color:#55d4d4;
+}
+</style>
+</head>
+<body>
+<img class="logo_desktop" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuK9qJbAqOUsWNNlhQ2NVoCeWq4b-QJEsc1g&usqp=CAU" width="55" height="55">
+<div class="top-left">DAYANANDA SAGAR UNIVERSITY</div>
+<div class="topnav">
+<a class="active" href="index.html">HOME</a>
+<a href="university.html">UNIVERSITY</a>	
+<a href="library.html">library</a>
+<a href="feedback.html">CONTACT</a>
+<a href="login.html">Login</a>
+</div>
+<!-- Slide Show -->
+<section>
+<img class="mySlides" src="college1.png" style="width:100%">
+<img class="mySlides" src="college2.png" style="width:100%">
+<img class="mySlides" src="college3.png" style="width:100%">
+</section>
+<script>
+// Automatic Slideshow - change image every 3 seconds
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}
+  x[myIndex-1].style.display = "block";
+  setTimeout(carousel, 3000);
+}
+</script>
+<div id="div1">
+<p style="text-align:center;">
+COURSES OFFERED:<br><br>
+<a href="https://www.dsu.edu.in/academics/schools/engineering">ENGINEERING</a>
+<a href="https://www.dsu.edu.in/engineering/bachelor-of-computer-application">BCA</a>
+<a href="https://cdsimer.edu.in/">MBBS</a>
+<a href="https://www.dsu.edu.in/commerce-management/mba">MBA</a>
+<a href="https://www.dsu.edu.in/academics/schools/applied-sciences">APPLIED SCIENCES</a>
+</p>
+</div>
+<section>
+<h2>Address:</h2>
+<p>campus-1:<br>Dayananda Sagar University
+Devarakaggalahalli, Harohalli,
+Kanakapura Road, Ramanagara Dt.,
+Bengaluru – 562 112
+<br>E-mail: admissions@dsu.edu.in<br><br>
+Campus 2:<br>Dayananda Sagar University
+Innovation Campus,
+Administrative & Main Admission office,
+Kudlu Gate, Hosur Road,<br>
+Bengaluru - 560 068
+<br>Admissions Helpline: +91 80 49092924 / 25<br><br>
+E-mail: admissions@dsu.edu.in | dsat@dsu.edu.in<br><br>
+Office of Registrar: +91 80 4909 2910 / 11<br><br>
+Office of Dean (School of Engineering): +91 80 4909 2986 / 32 / 33<br><br>
+DSU City Admissions Office:
+<br>Gate 2, 6th Floor, University Building,
+Dental Block, Kumaraswamy Layout,
+Bengaluru - 560111
+<br>Admissions Helpline: +91 80 46461800
+<br>E-mail: dsat@dsu.edu.in / enquiry@dsu.edu.in / admissions@dsu.edu.in
+</p>
+</section>
+</body>
+</html>

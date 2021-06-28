@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {box-sizing: border-box}
+body {font-family: Verdana, sans-serif; margin:0}
+.mySlides {display: none}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+.top-left {
+  position: absolute;
+  top: 8px;
+  left: 80px;
+ color: green;
+ font-size: 200%; 
+}
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+body{
+  background-color:#b1fc03;
+}
+</style>
+</head>
+<body>
+  <img class="logo_desktop" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuK9qJbAqOUsWNNlhQ2NVoCeWq4b-QJEsc1g&usqp=CAU" width="55" height="55">
+<div class="top-left">DAYANANDA SAGAR UNIVERSITY</div>
+<div class="topnav">
+<a class="active" href="index.html">HOME</a>
+<a href="university.html">UNIVERSITY</a> 
+<a href="library.html">library</a>
+<a href="feedback.html">CONTACT</a>
+<a href="login.html">Login</a>
+</div>
+
+<div class="slideshow-container">
+
+<div class="mySlides fade">
+  <div class="numbertext">1 / 3</div>
+  <img src="https://www.dsu.edu.in/cache/resized/bfb397374f586d7a7e8bf7e1750c1f89.jpg" style="width:100%">
+  <div class="text">E-LIBRARY</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">2 / 3</div>
+  <img src="https://www.dsu.edu.in/cache/resized/78c88b9e137b46ff58df6a0552664591.jpg" style="width:100%">
+  <div class="text">reference-2</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">3 / 3</div>
+  <img src="https://www.dsu.edu.in/cache/resized/0ab5763ac1619f8f991fd220d6f88d62.jpg" style="width:100%">
+  <div class="text">reference-3</div>
+</div>
+
+<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+<a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+</div>
+
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
+<h1>--ABOUT LIBRARY--</h1>
+<p>The library came into existence with the establishment of DSI and further expanded with the genesis of the Dayananda Sagar Institutions in the year 1969, Dayananda Sagar College of Engineering in 1979 and Dayananda Sagar University in 2014. Late Sri R. Dayananda Sagar, founder of the Dayananda Sagar group, took special interest in establishing a world class Library. The library is built and equipped steadily and systematically. The Library has a seating capacity of 560 students at a time.<br><br>
+Books are chief instrument of education and Library is the center of intellectual life. Dayananda Sagar University takes pride in building good and comprehensive Library with most modern facilities catering to the academic needs of the students and teaching community.<br><br>
+The Library has a huge collection of books, CD's and DVD's apart from latest periodicals with access to online resources through the Digital Library. The achievements are reflecting through the acknowledgements and positive remarks by the visiting faculties and dignitaries. The intellectual standards are truly reflected in its high standard Library. Library is accessible to all Undergraduates, Postgraduates, Research Scholars & faculty members. Library consists of skilled, professional and compassionate library staff members who are always pleased to help the users.<br><br>
+</p>
+<h3>Vision and mission:</h3>
+<ul>
+<li>
+The mission of Library and Information Centre of Dayananda Sagar University is to provide many services and various modes of activities to its user community in a wide range.
+</li>
+<li>
+Mainly to support teaching, learning, research and innovative activities in becoming active & discerning users for promotion of their knowledge.
+</li>
+<li>
+To establish learning environment for the Library users as well as encouraging and supporting the professional growth & individual growth for staff, students and every individual in his treasure of knowledge of great name, fame & reputation earned by its great extended services.
+</li>
+</ul>
+</body>
+</html>
